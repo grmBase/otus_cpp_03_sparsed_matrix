@@ -2,7 +2,6 @@
 #pragma once
 //---------------------------------------------------------------------------
 #include <string>
-#include <vector>
 #include <unordered_map>
 #include <functional> //std::hash
 //---------------------------------------------------------------------------
@@ -41,7 +40,7 @@ public:
   size_t m_nIndex2;
 
 };
-
+//---------------------------------------------------------------------------
 
 
 class t_proxy_arr
@@ -58,7 +57,7 @@ public:
   t_matrix* m_Parent;
   size_t m_nIndex1;
 };
-
+//---------------------------------------------------------------------------
 
 
 struct t_pair
@@ -72,12 +71,13 @@ struct t_pair
   }
 
 };
+//---------------------------------------------------------------------------
 
 
 class t_matrix
 {
-public:
 
+public:
 
   t_matrix(int an_def_value)
     : m_n_def_value(an_def_value) {};
