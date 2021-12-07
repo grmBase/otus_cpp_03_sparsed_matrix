@@ -15,7 +15,7 @@ int t_work_obj::func1()
 
   std::cout << "start func#1" << std::endl;
 
-  t_matrix matrix(-1);
+  t_matrix<int, -1> matrix;
 
   assert(matrix.size() == 0);
 
@@ -29,7 +29,8 @@ int t_work_obj::func1()
   assert(matrix.size() == 1);
 
 
-  for(auto& c : matrix)
+  // Тут по идее лучше ссылку, но так было в задании, поэтому оставил
+  for(auto c : matrix)
   {
     
     /*int x;
@@ -46,7 +47,7 @@ int t_work_obj::func1()
   std::cout << "func#1 finished" << std::endl;
   return 0;
 }
-
+//------------------------------
 
 
 int t_work_obj::func2()
@@ -54,14 +55,14 @@ int t_work_obj::func2()
 
   std::cout << std::endl << "start func#2" << std::endl;
 
-  t_matrix matrix(0);
+  t_matrix<int, 0> matrix;
 
 
   size_t un_max1 = 10;
-  for (size_t i = 0; i < un_max1; ++i)
+  for(size_t i = 0; i < un_max1; ++i)
   {
-    matrix[i][i] = (int)i;
-    matrix[un_max1 - 1 - i][i] = (int)(un_max1 - 1 - i);
+    matrix[i][i] = i;
+    matrix[un_max1 - 1 - i][i] = (un_max1 - 1 - i);
   }
 
   std::cout << "filling comleted" << std::endl;
@@ -85,7 +86,9 @@ int t_work_obj::func2()
 
 
   std::cout << "all occupied cells, coordinates, values:" << std::endl;
-  for (auto& c : matrix)
+
+  // Тут уже решил сделать более оптимально, раз код мой:
+  for(const auto& c : matrix)
   {
     /*
     int x;
@@ -101,4 +104,4 @@ int t_work_obj::func2()
 
   return 0;
 }
-
+//------------------------------
