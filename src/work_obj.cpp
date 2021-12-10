@@ -29,18 +29,29 @@ int t_work_obj::func1()
   assert(matrix.size() == 1);
 
 
+
+
+  auto iter1 = matrix.begin();
+  auto iter2 = matrix.end();
+
+  if (iter1 != iter2) {
+    std::cout << "Not equal" << std::endl;
+  }
+
+
+
+
   // Тут по идее лучше ссылку, но так было в задании, поэтому оставил
   for(auto c : matrix)
   {
-    
-    /*int x;
-    int y;
-    int v;
-    std::tie(x, y, v) = c;
-    std::cout << x << y << v << std::endl;*/
-    
+    int x = 0, y = 0, v = 0;
 
-    std::cout << "key: " << c.first.m_n1 << ", " << c.first.m_n2 << ", value: " << c.second << std::endl;
+    std::tie(x, y, v) = c;
+
+    // оставил, как было в задании:
+    std::cout << x << y << v << std::endl;
+
+    //std::cout << "x: " << x << ", y: " << y << ", value: " << v << std::endl;
   }
 
 
@@ -67,8 +78,6 @@ int t_work_obj::func2()
 
   std::cout << "filling comleted" << std::endl;
 
-
-
   
   std::cout << std::endl << "submatrix [1, 1] to [8, 8]:" << std::endl;
 
@@ -90,15 +99,11 @@ int t_work_obj::func2()
   // Тут уже решил сделать более оптимально, раз код мой:
   for(const auto& c : matrix)
   {
-    /*
-    int x;
-    int y;
-    int v;
+    
+    int x = 0, y = 0, v=0;
     std::tie(x, y, v) = c;
-    std::cout << x << y << v << std::endl;
-    */
-
-    std::cout << "key: " << c.first.m_n1 << ", " << c.first.m_n2 << ", value: " << c.second << std::endl;
+    //std::cout << x << y << v << std::endl;
+    std::cout << "x: " << x << ", y: " << y << ", value: " << v << std::endl;
   }
 
 

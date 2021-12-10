@@ -26,8 +26,8 @@ public:
   {};
 
 
-  // принимаем int:
-  t_final_proxy& operator = (const int& anSrc)
+  // принимаем тип T:
+  t_final_proxy& operator = (const T& anSrc)
   {
     m_Parent->set_value(m_nIndex1, m_nIndex2, anSrc);
 
@@ -35,8 +35,7 @@ public:
   };
 
 
-
-  // приводимся к int:
+  // приводимся к T:
   operator T() const
   {
     return m_Parent->get_value(m_nIndex1, m_nIndex2);
@@ -95,74 +94,101 @@ public:
   t_matrix() {};
 
   // доступ по скобочкам
-  t_proxy_arr<T, a_def_value> operator[](size_t anIndex1) 
+  t_proxy_arr<T, a_def_value> operator[](size_t anIndex1)
   {
     //t_proxy_arr var;
     //var.m_Parent = this;
 
     //return t_proxy_arr {this, 1};
-    return t_proxy_arr{this, anIndex1};
+    return t_proxy_arr{ this, anIndex1 };
     //return 10;
   };
 
 
 
 
+  // custom hash can be a standalone function object:
+  struct MyHash
+  {
+    std::size_t operator()(t_pair const& s) const noexcept
+    {
+      std::size_t h1 = std::hash<T>{}(s.m_n1);
+      std::size_t h2 = std::hash<T>{}(s.m_n2);
+      return h1 ^ (h2 << 1); // some mix of hashes
+    }
+  };
 
-  /*
-  // Свой итератор, чтобы для него сделать оператор преобрзования в tuple
+
+
+  using t_my_map = std::unordered_map<t_pair, T, MyHash>;
+  using t_my_map_iter = typename::std::unordered_map<t_pair, T, MyHash>::iterator;
+  //typedef std::unordered_map<t_pair, T, MyHash>::iterator t_my_map;
+  //typedef std::unordered_map<t_pair, T, MyHash>::iterator t_iter;
+
+  //std::unordered_map<t_pair, T, MyHash> tmp;
+
+
+
+    // Свой итератор, чтобы для него сделать оператор преобрзования в tuple
+  //template <typename T, T a_def_value>
+  template <typename T, T a_def_value>
   class t_my_iterator
   {
 
   public:
 
-    t_my_iterator(t_node_record* apNode) : m_pNode(apNode) { };
+    t_my_iterator(const t_my_map_iter aiter)
+      :m_orig_iter(aiter) {};
 
     t_my_iterator& operator++ () {
-      if (!m_pNode) {
-        throw std::runtime_error("next it nullptr");
-        //return *this;
-      }
-      m_pNode = m_pNode->p_next;
+
+      m_orig_iter++;
 
       return *this;
     };
 
     bool operator!= (const t_my_iterator& other)
     {
-      return m_pNode != other.m_pNode;
+      return m_orig_iter != other.m_orig_iter;
     }
 
-    const T& operator*() const
+    const auto operator*() const
     {
-      return m_pNode->m_date;
+      //return *m_orig_iter;
+      //return (*m_orig_iter).second;
+
+      return std::make_tuple(
+        (*m_orig_iter).first.m_n1,
+        (*m_orig_iter).first.m_n2,
+        (*m_orig_iter).second);
     }
 
 
   private:
-
-    t_node_record* m_pNode;
+    t_my_map_iter m_orig_iter;
   };
-  */
 
 
 
-  // для перебора range for:
+
+
+  // реализации для перебора range for:
   auto begin() const {
-    return m_map.begin();
+    return t_my_iterator<T, a_def_value>(m_map.begin());
   }
 
   auto end() const {
-    return m_map.end();
+    return t_my_iterator<T, a_def_value>(m_map.end());
   }
-
-
-  //operator std::tuple<const t_pair, int>();
 
   size_t size() const
   {
     return m_map.size();
   };
+
+
+
+
 
 
 
@@ -195,17 +221,8 @@ public:
 private:
 
 
-  // custom hash can be a standalone function object:
-  struct MyHash
-  {
-    std::size_t operator()(t_pair const& s) const noexcept
-    {
-      std::size_t h1 = std::hash<T>{}(s.m_n1);
-      std::size_t h2 = std::hash<T>{}(s.m_n2);
-      return h1 ^ (h2 << 1); // some mix of hashes
-    }
-  };
-
-  std::unordered_map<t_pair, T, MyHash> m_map;
+  mutable std::unordered_map<t_pair, T, MyHash> m_map;
 
 };
+
+
