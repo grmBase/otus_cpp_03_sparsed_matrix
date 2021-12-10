@@ -131,7 +131,7 @@ public:
 
     // Свой итератор, чтобы для него сделать оператор преобрзования в tuple
   //template <typename T, T a_def_value>
-  template <typename T1, T1 a_def_value>
+  template <typename T1, T1 a_def_value1>
   class t_my_iterator
   {
 
