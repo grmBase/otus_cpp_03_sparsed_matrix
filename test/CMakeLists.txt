@@ -11,7 +11,8 @@ project(matrix VERSION ${PROJECT_VESRION})
 
 # используем gtest
 find_package(GTest REQUIRED)
-
+# наверно нужен для gtest
+find_package(Threads)
 
 
 # имя основной утилиты будет таким же как и имя проекта?
