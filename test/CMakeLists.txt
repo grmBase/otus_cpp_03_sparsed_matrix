@@ -51,5 +51,5 @@ endif()
 
 
 # регистрируем тест:
-add_test("simple unit test for matrix" matrix_test)
+add_test(matrix_test matrix_test)
 
