@@ -152,7 +152,7 @@ public:
       return m_orig_iter != other.m_orig_iter;
     }
 
-    const auto operator*() const
+    auto operator*() const
     {
       //return *m_orig_iter;
       //return (*m_orig_iter).second;
