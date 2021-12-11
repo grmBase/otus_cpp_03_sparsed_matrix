@@ -5,7 +5,7 @@ set(PROJECT_VESRION 0.0.${PATCH_VERSION})
 
 
 # имя проекта
-project(matrix_main_util VERSION ${PROJECT_VESRION})
+project(matrix VERSION ${PROJECT_VESRION})
 
 
 
