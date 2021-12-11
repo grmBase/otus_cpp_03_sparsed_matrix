@@ -1,12 +1,12 @@
 var searchData=
 [
-  ['m_5fn1_0',['m_n1',['../structt__pair.html#a37bc4a1d9706e0b3094568999f81f60d',1,'t_pair']]],
-  ['m_5fn2_1',['m_n2',['../structt__pair.html#a81feaafbb5a1982d0e96aad660ffb4c3',1,'t_pair']]],
-  ['m_5fnindex1_2',['m_nIndex1',['../classt__final__proxy.html#a77220eba6a9c7c2e33b44c2dc82a71fa',1,'t_final_proxy::m_nIndex1()'],['../classt__proxy__arr.html#ac3307adb694e8b6535c45cc606a332ac',1,'t_proxy_arr::m_nIndex1()']]],
-  ['m_5fnindex2_3',['m_nIndex2',['../classt__final__proxy.html#a005ff57b1ceb1a32f08771a455c675d0',1,'t_final_proxy']]],
-  ['m_5fparent_4',['m_Parent',['../classt__final__proxy.html#a5ecfdcdbc1fc6cc0fe2308cee2e7ec93',1,'t_final_proxy::m_Parent()'],['../classt__proxy__arr.html#a63d12cada5c80ed847201980dcdd816d',1,'t_proxy_arr::m_Parent()']]],
-  ['main_5',['main',['../CMakeCCompilerId_8c.html#a0ddf1224851353fc92bfbff6f499fa97',1,'main(int argc, char *argv[]):&#160;CMakeCCompilerId.c'],['../CMakeCXXCompilerId_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97',1,'main(int argc, char *argv[]):&#160;CMakeCXXCompilerId.cpp'],['../main_8cpp.html#a78a7822383144f4e823de9fc40650104',1,'main(int, const char *[]):&#160;main.cpp']]],
-  ['main_2ecpp_6',['main.cpp',['../main_8cpp.html',1,'']]],
-  ['main_2ecpp_2eo_2ed_7',['main.cpp.o.d',['../main_8cpp_8o_8d.html',1,'']]],
-  ['myhash_8',['MyHash',['../structt__matrix_1_1MyHash.html',1,'t_matrix']]]
+  ['operator_20t_0',['operator T',['../classt__final__proxy.html#aabb0befe1776f5a84c1a1648d2f1d8b1',1,'t_final_proxy']]],
+  ['operator_21_3d_1',['operator!=',['../classt__matrix_1_1t__my__iterator.html#a0ba47f5309699959bd17eab7fe4c3aa8',1,'t_matrix::t_my_iterator']]],
+  ['operator_28_29_2',['operator()',['../structt__matrix_1_1MyHash.html#a3307fb9a6990f330aaefa122663d8883',1,'t_matrix::MyHash']]],
+  ['operator_2a_3',['operator*',['../classt__matrix_1_1t__my__iterator.html#aedff383a4de7aa30cf4e9bae7652ffdd',1,'t_matrix::t_my_iterator']]],
+  ['operator_2b_2b_4',['operator++',['../classt__matrix_1_1t__my__iterator.html#a244d8a7070fe302c970b832b1c8b1257',1,'t_matrix::t_my_iterator']]],
+  ['operator_3d_5',['operator=',['../classt__final__proxy.html#a89317cfbd63b86f5df294a1354565db6',1,'t_final_proxy']]],
+  ['operator_3d_3d_6',['operator==',['../structt__pair.html#a22a0dcce081e42a243f46f11590bb5be',1,'t_pair']]],
+  ['operator_5b_5d_7',['operator[]',['../classt__proxy__arr.html#a0a572e4c300aee4c5dbfaa1379adb529',1,'t_proxy_arr::operator[]()'],['../classt__matrix.html#a1faad8bcb28eeb0cd80a2c5c5b95a40e',1,'t_matrix::operator[]()']]],
+  ['otus_5fcpp_5f05_5fsparsed_5fmatrix_8',['otus_cpp_05_sparsed_matrix',['../md_README.html',1,'']]]
 ];
