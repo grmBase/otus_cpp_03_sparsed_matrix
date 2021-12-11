@@ -13,18 +13,12 @@ int main(int, const char* [])
   try 
   {
 
-    int nResult = workObj.func1();
+    int nResult = workObj.task();
     if(nResult) {
-      std::cout << "Error in func1(), code: " << nResult << std::endl;
+      std::cout << "Error in task(), code: " << nResult << std::endl;
       return nResult;
     }
 
-
-    nResult = workObj.func2();
-    if (nResult) {
-      std::cout << "Error in func2(), code: " << nResult << std::endl;
-      return nResult;
-    }
 
   }
   catch(const std::exception& exc)
