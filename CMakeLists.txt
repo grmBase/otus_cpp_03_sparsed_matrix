@@ -18,8 +18,7 @@ project(matrix VERSION ${PROJECT_VESRION})
 # имя основной утилиты будет таким же как и имя проекта?
 add_executable(matrix
 src/main.cpp 
-src/work_obj.cpp
-src/sparse_matrix.cpp)
+src/work_obj.cpp)
 
 # пока не буду делать библиотеку, но по идее потом может и надо буует
 #add_library(helloworld lib.cpp)
@@ -29,8 +28,9 @@ set_target_properties(matrix PROPERTIES
     CXX_STANDARD 17
     CXX_STANDARD_REQUIRED ON
 )
+
 target_include_directories(matrix
-    PRIVATE "${CMAKE_BINARY_DIR}"
+    PRIVATE ${PROJECT_SOURCE_DIR}/./
 )
 
 #  Пока не надо - тестов не добавляю

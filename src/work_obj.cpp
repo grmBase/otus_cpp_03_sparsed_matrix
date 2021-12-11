@@ -5,7 +5,7 @@
 //------------------------------
 #include "work_obj.h"
 //------------------------------
-#include "sparse_matrix.h"
+#include "include/sparse_matrix.h"
 //------------------------------
 
 
